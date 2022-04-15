@@ -7,6 +7,7 @@
 
 #include <iostream>
 #include <cstring>
+#include <algorithm>
 using namespace std;
 
 int main(int argc, const char * argv[]) {
@@ -30,7 +31,7 @@ int main(int argc, const char * argv[]) {
             } else if(i == 0) {
                 d[i][j] = j;
             } else {
-                d[i][j] = std::min({d[i-1][j-1]+(oriString[j-1]!=newString[i-1]), d[i-1][j]+1, d[i][j-1]+1}); //min
+                d[i][j] = min({d[i-1][j-1]+(oriString[j-1]!=newString[i-1]), d[i-1][j]+1, d[i][j-1]+1}); //min
             }
         }
     }
